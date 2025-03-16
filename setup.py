@@ -1,16 +1,18 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='llm-security',
     version='0.0.1',
+    packages=find_packages(include=['rag', 'data_collection', 'vector_database']),
     install_requires=[
-        'langchain-community==0.3.19',
-        'langchain-ollama==0.2.3',
-        'langchain[groq]==0.3.20',
-        'langchain-text-splitters==0.3.6',
-        'langgraph==0.3.5',
-        'beautifulsoup4==4.13.3',
+        'langchain',
+        'langchain[groq]',
+        'langchain-core',
+        'langchain-ollama',
+        'langchain-huggingface',
+        'langchain-text-splitters',
+        'langgraph',
+        'sentence-transformers',
         'faiss-cpu',
-        'pypdf'
     ],
 )
